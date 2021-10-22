@@ -1,0 +1,26 @@
+1-.
+select  ?d where {?y a dbo:Politician.
+                          ?y ?d ?x} 
+2-.
+select distinct ?d where {?y a dbo:Politician.
+                            ?y ?d ?x
+                            FILTER(?d!=rdf:type) } 
+3-.
+select distinct COUNT(?d) where {?y a dbo:Politician.
+                            ?y ?d ?x
+                            FILTER(?d!=rdf:type) } 
+4-.
+select distinct ?x where {?y a dbo:Politician.
+                            ?y ?d ?x
+                            FILTER(?d!=rdf:type) } 
+5-.
+select distinct ?d COUNT(?x) where {?y a dbo:Politician.
+                            ?y ?d ?x
+                            FILTER(?d!=rdf:type) } 
+6-.
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+select distinct ?x where {dbo:Politician rdfs:subClassof ?x} 
+7-.
+select distinct ?d where {?y a dbo:Politician.
+                            ?y ?d ?x
+                            FILTER regex(?d, "name$")
