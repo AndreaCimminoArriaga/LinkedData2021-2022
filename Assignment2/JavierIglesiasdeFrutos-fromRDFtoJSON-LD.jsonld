@@ -1,0 +1,47 @@
+JSON
+
+{	
+	'nombre':'Ana Madrid',
+	'ciudad':'Madrid',
+	'edad':18,
+	'padres':[
+		'madre':'Maribel',
+		'padre':'Fernando'
+	]
+	'asignaturas':[
+		'nombre':' Web Semántica',
+		'profesor':”Andrea Cimmino'
+	]
+}
+
+
+
+
+
+JSON-LD
+{
+	'context':{
+		'sch' : 'https://schema.org/',
+		'nombre' : 'sch:name'
+		'ciudad': 'sch:homeLocation',
+		'edad' :'sch:age',
+		'universidad' :'sch:affiliation',
+		'descripcion': 'sch:descripcion'
+	}
+
+
+	'@type':'sch:Person', 
+	'nombre': 'Javier',
+	'ciudad': 'Madrid',
+	'edad': '19',
+	'universidad': 'UPM',
+	'padres' : [
+		{"@id@:"http://Linkeddata.es/person/02","@type": "sch:Person","madre":"maribel"},
+			{"@type:"sch:Person","padre":"Fernando"}
+	]
+	'asignaturas': [
+		{"@id@:"http://Linkeddata.es/person/02","@type":"sch:name","name":"Web Semántica”},
+	    		{"@type:"sch:Person","profesor":"Andrea Cimmino"}
+	]
+}
+	
