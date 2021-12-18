@@ -1,0 +1,230 @@
+@prefix our: <http://www.consumo_madrid.com/ontology#>. 
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@base <http://example.com/ns#>.
+
+<#TriplesMap1>
+	rml:logicalSource [ 
+    	rml:source "consumo_energia_edificios-with-links.csv" ;
+		rml:referenceFormulation ql:CSV 
+	];
+    	rr:subjectMap [
+			rr:template "http://www.consumo_madrid.com/ontology/Building/{ID}";
+			rr:termType rr:IRI; 
+			rr:class our:Building
+    ];
+
+    rr:predicateObjectMap [
+    	rr:predicate our:hasId;
+    	rr:objectMap [
+      		rml:reference "ID";
+            rr:datatype xsd:int   
+      		]
+    ];
+
+    rr:predicateObjectMap [
+    	rr:predicate our:latitude;
+    	rr:objectMap [
+      		rml:reference "COORDENADA_Y";
+            rr:datatype xsd:float
+      		]
+    ];
+    
+    rr:predicateObjectMap [
+    	rr:predicate our:longitude;
+    	rr:objectMap [
+      		rml:reference "COORDENADA_X";
+            rr:datatype xsd:float
+      		]
+    ];
+	
+    rr:predicateObjectMap [
+    	rr:predicate our:buildingType;
+    	rr:objectMap [
+      		rml:reference "TIPO_EDIFICIO";
+            rr:datatype xsd:string
+      		]
+    ];
+
+	rr:predicateObjectMap [
+    	rr:predicate our:buildingName;
+    	rr:objectMap [
+      		rml:reference "EDIFICIO";
+            rr:datatype xsd:string
+      		]
+    ];
+
+    rr:predicateObjectMap [ 
+		rr:predicateMap [ rr:constant our:isLocatedAt; rr:termType rr:IRI ]; 
+		rr:objectMap [ 
+			rr:template "http://www.consumo_madrid.com/ontology/Street/{VIA}"; 
+			rr:termType rr:IRI 
+			] 
+	];
+    
+    rr:predicateObjectMap [
+    	rr:predicate our:hasNumber;
+    	rr:objectMap [
+      		rml:reference "NUMERO_DEL_EDIFICIO";
+            rr:datatype xsd:int
+      		]
+    ];
+
+    rr:predicateObjectMap [
+    	rr:predicate our:hasPostalCode;
+    	rr:objectMap [
+      		rml:reference "CODIGO_POSTAL";
+            rr:datatype xsd:int
+      		]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate our:hasEnergyUse;
+        rr:objectMap [
+        rr:parentTriplesMap <#TriplesMap2>;
+        rr:joinCondition [
+            rr:child "ID";
+            rr:parent "ID";
+            ];
+        ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate our:isFromDistrict;
+        rr:objectMap [
+        rr:parentTriplesMap <#TriplesMap3>;
+        rr:joinCondition [
+            rr:child "DISTRITO";
+            rr:parent "DISTRITO";
+            ];];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate our:isFromNeighborhood;
+        rr:objectMap [
+        rr:parentTriplesMap <#TriplesMap4>;
+        rr:joinCondition [
+            rr:child "BARRIO";
+            rr:parent "BARRIO";
+            ];
+        ];
+    ].
+
+<#TriplesMap2>
+	rml:logicalSource [ 
+    	rml:source "consumo_energia_edificios-with-links.csv" ;
+		rml:referenceFormulation ql:CSV 
+	];
+    	rr:subjectMap [
+			rr:template "http://www.consumo_madrid.com/ontology/Energy_use/{ID}";
+			rr:termType rr:IRI; 
+			rr:class our:Energy_use
+    ];
+    
+    rr:predicateObjectMap [
+    	rr:predicate our:Amount;
+    	rr:objectMap [
+      		rml:reference "CONSUMO";
+            rr:datatype xsd:float
+      		]
+    ];
+    
+    rr:predicateObjectMap [
+    	rr:predicate our:energyType;
+    	rr:objectMap [
+      		rml:reference "TIPO";
+            rr:datatype xsd:string
+      		]
+    ];
+    
+    rr:predicateObjectMap [
+    	rr:predicate our:energyClass;
+    	rr:objectMap [
+      		rml:reference "CLASE";
+            rr:datatype xsd:string
+      		]
+    ];
+    
+    rr:predicateObjectMap [
+    	rr:predicate our:isFromYear;
+    	rr:objectMap [
+      		rml:reference "ANIO";
+            rr:datatype xsd:int
+      		]
+    ];
+    
+    rr:predicateObjectMap [
+    	rr:predicate our:isFromMonth;
+    	rr:objectMap [
+      		rml:reference "MES";
+            rr:datatype xsd:int
+      		]
+    ];
+    
+    rr:predicateObjectMap [
+    	rr:predicate our:hasMagnitude;
+    	rr:objectMap [
+      		rml:reference "UNIDADES";
+            rr:datatype xsd:string
+      		]
+    ].
+
+<#TriplesMap3>
+	rml:logicalSource [ 
+    	rml:source "consumo_energia_edificios-with-links.csv" ;
+		rml:referenceFormulation ql:CSV 
+	];
+    	rr:subjectMap [
+			rr:template "http://www.consumo_madrid.com/ontology/District/{DISTRITO}";
+			rr:termType rr:IRI; 
+			rr:class our:District
+    ];
+
+    rr:predicateObjectMap [ 
+            rr:predicateMap [ rr:constant owl:sameAs; rr:termType rr:IRI ]; 
+            rr:objectMap [ 
+                rr:template "http://dbpedia.org/resource/{URI_DISTRITO}";
+                rr:termType rr:IRI 
+                ] 
+        ];
+
+    
+    rr:predicateObjectMap [
+    	rr:predicate rdfs:label;
+    	rr:objectMap [
+      		rml:reference "DISTRITO";
+            rr:datatype xsd:string
+      		]
+    ].
+
+<#TriplesMap4>
+	rml:logicalSource [ 
+    	rml:source "consumo_energia_edificios-with-links.csv" ;
+		rml:referenceFormulation ql:CSV 
+	];
+    	rr:subjectMap [
+			rr:template "http://www.consumo_madrid.com/ontology/Neighborhood/{BARRIO}";
+			rr:termType rr:IRI; 
+			rr:class our:Neighborhood
+    ];
+
+    rr:predicateObjectMap [ 
+            rr:predicateMap [ rr:constant owl:sameAs; rr:termType rr:IRI ]; 
+            rr:objectMap [ 
+                rr:template "http://dbpedia.org/resource/{URI_BARRIO}";
+                rr:termType rr:IRI ] 
+    ];
+    
+    rr:predicateObjectMap [
+    	rr:predicate rdfs:label;
+    	rr:objectMap [
+      		rml:reference "BARRIO";
+            rr:datatype xsd:string
+      		]
+    ].

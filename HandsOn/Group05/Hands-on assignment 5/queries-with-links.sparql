@@ -14,7 +14,7 @@ SELECT ?linkedDistrict ?building
           ?s frappe:isIn ?district.
         }
 
-#2- Devuelve el numero de los distritos que estan linkeados con el total, para sacer el porcentaje
+#2- Devuelve el numero de los distritos que estan linkeados con el total, para poder sacar así el porcentaje
 #la query sería análoga para las ciudades que están linked.
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -37,14 +37,20 @@ SELECT
 
 #3- Devuelve los edificios y las potencias asociadas.
 
-
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX epower: <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontology#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX dbp: <http://dbpedia.org/property/>
-PREFIX frappe: <http://streamreasoning.org/ontologies/frappe#>
 
 SELECT ?building ?power
   WHERE { ?building a epower:Building.
           ?building epower:power ?power.
         }
+
+#4- Devuelve los edificios y su potencia según la empresa instaladora (ejemplo con la empresa AURA).
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX epower: <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontology#>
+PREFIX sor: <http://purl.org/net/soron/>
+
+SELECT ?building ?power
+  WHERE { ?building sor:hires companies:AURA.
+          ?building epower:power ?power
