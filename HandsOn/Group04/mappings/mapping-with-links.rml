@@ -162,7 +162,7 @@
 		];
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
-		rr:objectMap [rr:template "http://www.airqualitypredictor.org/ontology/{NOM_TIPO}"]
+		rr:objectMap [rr:template "http://www.airqualitypredictor.org/ontology#{NOM_TIPO}"]
 		];
 	rr:predicateObjectMap [
 		rr:predicate rdfs:subClassOf;
@@ -179,7 +179,7 @@
 		];
 	rr:predicateObjectMap [
 		rr:predicate rdf:type; 
-		rr:objectMap [rr:template "http://www.airqualitypredictor.org/ontology/ControlStation"; rr:termType rr:IRI]
+		rr:objectMap [rr:template "http://www.airqualitypredictor.org/ontology#ControlStation"; rr:termType rr:IRI]
 		];
 	rr:predicateObjectMap [
 		rr:predicate our:hasControlStation;

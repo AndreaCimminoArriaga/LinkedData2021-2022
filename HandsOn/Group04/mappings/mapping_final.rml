@@ -12,7 +12,7 @@
 		rml:source "air_quality-updated.csv";
 		rml:referenceFormulation ql:CSV  ];
 	rr:subjectMap [
-		rr:template "http://www.airqualitypredictor.org/ontology/{Measurement}";
+		rr:template "http://www.airqualitypredictor.org/ontology#{Measurement}";
 		rr:class owl:Class
 		];
 rr:predicateObjectMap [
