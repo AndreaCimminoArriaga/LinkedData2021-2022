@@ -11,18 +11,18 @@
 
 <#TriplesMapMeasurement> a rr:TriplesMap;
 	rml:logicalSource[
-		rml:source "air_quality-updated.csv";
+		rml:source "air_quality-updated_diciembre.csv";
 		rml:referenceFormulation ql:CSV];
 	rr:subjectMap [
 		rr:template "http://www.airqualitypredictor.org/data/{Measurement}";
 		];
 	rr:predicateObjectMap [
 		rr:predicate rdf:type; 
-		rr:objectMap [rr:template "http://www.airqualitypredictor.org/ontology/{magnitude}"; rr:termType rr:IRI]
+		rr:objectMap [rr:template "http://www.airqualitypredictor.org/ontology#{magnitude}"; rr:termType rr:IRI]
 		];
 	rr:predicateObjectMap [
 		rr:predicate our:atDate; 
-		rr:objectMap [rml:reference "date"; rr:datatype xsd:dateTime]
+		rr:objectMap [rml:reference "date"; rr:datatype xsd:date]
 		];
 	rr:predicateObjectMap [
 		rr:predicate our:atDay; 
@@ -60,14 +60,14 @@
 
 <#TriplesMapMeasurementSubClass1> a rr:TriplesMap;
 	rml:logicalSource [
-		rml:source "air_quality-updated.csv";
+		rml:source "air_quality-updated_diciembre.csv";
 		rml:referenceFormulation ql:CSV ];
 	rr:subjectMap [
 		rr:template "http://www.airqualitypredictor.org/data/{Measurement}";
 		];
 	rr:predicateObjectMap [
 		rr:predicate rdf:type; 
-		rr:objectMap [rr:template "http://www.airqualitypredictor.org/ontology/{magnitude}"; rr:termType rr:IRI]
+		rr:objectMap [rr:template "http://www.airqualitypredictor.org/ontology#{magnitude}"; rr:termType rr:IRI]
 		];
 	rr:predicateObjectMap [
 		rr:predicate rdfs:subClassOf; 
@@ -76,18 +76,18 @@
 
 <#TriplesMapMeasurementSubClass2> a rr:TriplesMap;
 	rml:logicalSource [
-		rml:source "meteorological_data-updated.csv";
+		rml:source "meteorological_data-updated_diciembre.csv";
 		rml:referenceFormulation ql:CSV ];
 	rr:subjectMap [
 		rr:template "http://www.airqualitypredictor.org/data/{Measurement}";
 		];
 	rr:predicateObjectMap [
 		rr:predicate rdf:type;
-		rr:objectMap [rr:template "http://www.airqualitypredictor.org/ontology/{magnitude}"; rr:termType rr:IRI]
+		rr:objectMap [rr:template "http://www.airqualitypredictor.org/ontology#{magnitude}"; rr:termType rr:IRI]
 		];
 	rr:predicateObjectMap [
 		rr:predicate our:atDate; 
-		rr:objectMap [rml:reference "date"; rr:datatype xsd:dateTime]
+		rr:objectMap [rml:reference "date"; rr:datatype xsd:date]
 		];
 	rr:predicateObjectMap [
 		rr:predicate our:atDay; 
