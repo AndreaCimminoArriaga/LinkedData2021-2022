@@ -117,8 +117,7 @@
 
 
 ###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#District
-<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#District> rdf:type owl:Class ;
-                                                                                                 rdfs:subClassOf <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#City> .
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#District> rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Educational
@@ -162,8 +161,7 @@
 
 
 ###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Street
-<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Street> rdf:type owl:Class ;
-                                                                                               rdfs:subClassOf <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#District> .
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Street> rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Warehouse

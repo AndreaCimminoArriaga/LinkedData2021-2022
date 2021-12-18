@@ -1,0 +1,145 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix transit: <http://vocab.org/transit/terms/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix pr: <http://findmycontainer.es/lcc/ontology/Container#>.
+@prefix geosp: <http://www.opengis.net/ont/geosparql#>.
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix sf: <http://www.opengis.net/ont/sf#>.
+@base <http://findmycontainer.es/lcc/ontology/Container#>.
+
+
+<#ClassContainer> a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "Contenedor_2.csv" ;
+    rml:referenceFormulation ql:CSV 
+  ];
+
+  rr:subjectMap [
+    rr:template "http://findmycontainer.es/lcc/resource/Container/{IDENTIFICADOR}";
+    rr:termType rr:IRI; rr:class pr:Container
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicateMap [ rr:constant geo:long; rr:termType rr:IRI ];
+    rr:objectMap [ rml:reference "LONGITUD" ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicateMap [ rr:constant geo:lat; rr:termType rr:IRI ];
+    rr:objectMap [ rml:reference "LATITUD" ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicateMap [ rr:constant pr:hasIdentifier; rr:termType rr:IRI ];
+    rr:objectMap [ rml:reference "IDENTIFICADOR"]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicateMap [rr:constant rdf:type ; rr:TermType rr:IRI];
+    rr:objectMap [rr:template "http://findmycontainer.es/lcc/ontology/Container#{TIPO CONTENEDOR}"; rr:termType rr:IRI]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicateMap [rr:constant pr:hasQuantity; rr:termType rr:IRI];
+    rr:objectMap [rml:reference "CANTIDAD"]
+
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicateMap [rr:constant pr:hasLot; rr:termType rr:IRI];
+    rr:objectMap [rml:reference "LOTE"]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicateMap [rr:constant pr:modelDescription; rr:termType rr:IRI];
+    rr:objectMap [ rml:reference "DESCRIPCION MODELO"]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicateMap [rr:constant pr:isIn; rr:termType rr:IRI];
+    rr:objectMap [rr:template "http://findmycontainer.es/lcc/resource/Address/{DIRECCION COMPLETA}"; rr:termType rr:IRI]
+  ];
+  
+  rr:predicateObjectMap [
+    rr:predicateMap [rr:constant geosp:hasGeometry; rr:termType rr:IRI];
+    rr:objectMap [rr:template "http://findmycontainer.es/lcc/resource/Container/{IDENTIFICADOR}/position"; rr:termType rr:IRI]
+  ].
+
+
+<#ClassGeometry> a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "Contenedor_2.csv" ;
+    rml:referenceFormulation ql:CSV 
+  ];
+
+   rr:subjectMap [
+    rr:template "http://findmycontainer.es/lcc/resource/Container/{IDENTIFICADOR}/position";
+    rr:termType rr:IRI; rr:class sf:Point
+  ];
+
+    rr:predicateObjectMap [
+     rr:predicate geosp:asWKT;
+     rr:objectMap [ rr:template "POINT({LONGITUD} {LATITUD})"; rr:datatype geosp:wktLiteral]
+
+  ].
+
+
+
+<#ClassAddress> a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "Contenedor_2.csv" ;
+    rml:referenceFormulation ql:CSV 
+  ];
+
+  rr:subjectMap [
+    rr:template "http://findmycontainer.es/lcc/resource/Address/{DIRECCION COMPLETA}";
+    rr:termtype rr:IRI; rr:class pr:Address
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicateMap [ rr:constant pr:hasName; rr:termType rr:IRI ];
+    rr:objectMap [ rml:reference "NOMBRE"; rr:termType rr:Literal ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicateMap [ rr:constant pr:hasNumber; rr:termType rr:IRI ];
+    rr:objectMap [ rml:reference "NUMERO" ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicateMap [ rr:constant pr:hasFullAddress; rr:termType rr:IRI ];
+    rr:objectMap [ rml:reference "DIRECCION COMPLETA"; rr:termType rr:Literal ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicateMap [rr:constant pr:isIn; rr:termType rr:IRI];
+    rr:objectMap [rr:template "http://findmycontainer.es/lcc/resource/District/{DISTRITO}"; rr:termType rr:IRI]
+  ].
+
+
+
+<#ClassDistrict> a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "Contenedor_2.csv" ;
+    rml:referenceFormulation ql:CSV 
+  ];
+
+  rr:subjectMap [
+    rr:template "http://findmycontainer.es/lcc/resource/District/{DISTRITO}";
+    rr:class pr:District
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicateMap [ rr:constant pr:hasName; rr:termType rr:IRI ];
+    rr:objectMap [ rml:reference "DISTRITO"; rr:termType rr:Literal ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicateMap [ rr:constant owl:sameAs; rr:termType rr:IRI ];
+    rr:objectMap [ rml:reference "URI distrito"; rr:termType rr:IRI ]
+  ].
+
+

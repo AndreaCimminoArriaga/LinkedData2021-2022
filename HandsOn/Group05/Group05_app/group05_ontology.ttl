@@ -1,0 +1,174 @@
+@prefix : <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontology> .
+
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontology> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#hasCoordinates
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#hasCoordinates> rdf:type owl:ObjectProperty ;
+                                                                                                       rdfs:domain <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Building> ;
+                                                                                                       rdfs:range <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Location> .
+
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#hires
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#hires> rdf:type owl:ObjectProperty ;
+                                                                                              rdfs:domain <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Building> ;
+                                                                                              rdfs:range <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Company> ;
+                                                                                              rdfs:comment "this object property relates the building that hires the comapany that installed the photoelectric panels"@en .
+
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#isIn
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#isIn> rdf:type owl:ObjectProperty ;
+                                                                                             rdfs:domain <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Building> ,
+                                                                                                         <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#District> ,
+                                                                                                         <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Street> ;
+                                                                                             rdfs:range <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#City> ,
+                                                                                                        <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#District> ,
+                                                                                                        <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Street> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#contractDate
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#contractDate> rdf:type owl:DatatypeProperty ;
+                                                                                                     rdfs:domain <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Company> ;
+                                                                                                     rdfs:range xsd:dateTimeStamp .
+
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#hasCA
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#hasCA> rdf:type owl:DatatypeProperty ;
+                                                                                              rdfs:domain <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#District> ;
+                                                                                              rdfs:range xsd:int ;
+                                                                                              rdfs:comment "This is referred to the postal code number"@en .
+
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#hasName
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#hasName> rdf:type owl:DatatypeProperty ;
+                                                                                                rdfs:domain <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Building> ,
+                                                                                                            <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#City> ,
+                                                                                                            <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Company> ,
+                                                                                                            <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#District> ,
+                                                                                                            <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Street> ;
+                                                                                                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#lat
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#lat> rdf:type owl:DatatypeProperty ;
+                                                                                            owl:equivalentProperty <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#long> ;
+                                                                                            rdfs:domain <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Location> ;
+                                                                                            rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#long
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#long> rdf:type owl:DatatypeProperty ;
+                                                                                             rdfs:domain <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Location> ;
+                                                                                             rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#portalNumber
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#portalNumber> rdf:type owl:DatatypeProperty ;
+                                                                                                     rdfs:domain <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Street> ;
+                                                                                                     rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#power
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#power> rdf:type owl:DatatypeProperty ;
+                                                                                              rdfs:domain <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Building> ;
+                                                                                              rdfs:range xsd:int .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Administrative
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Administrative> rdf:type owl:Class ;
+                                                                                                       rdfs:subClassOf <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Building> .
+
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Building
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Building> rdf:type owl:Class ;
+                                                                                                 rdfs:comment "The building class, will be the main class that has almost all the data objects and data properties linked to it, so its subclasses will inherit those objects and properties and the sublclasses will give to the user an information of the type of building with all the properties and objects that the Bulding class has."@en .
+
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#City
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#City> rdf:type owl:Class ;
+                                                                                             rdfs:comment "With our data set will be only Madrid but we created it in order to have a stronger link"@en .
+
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Company
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Company> rdf:type owl:Class ;
+                                                                                                rdfs:comment "The company that installed the photoelectric plates"@en .
+
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Cultural
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Cultural> rdf:type owl:Class ;
+                                                                                                 rdfs:subClassOf <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Building> .
+
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#District
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#District> rdf:type owl:Class ;
+                                                                                                 rdfs:subClassOf <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#City> .
+
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Educational
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Educational> rdf:type owl:Class ;
+                                                                                                    rdfs:subClassOf <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Building> .
+
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Enviromental
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Enviromental> rdf:type owl:Class ;
+                                                                                                     rdfs:subClassOf <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Building> .
+
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Location
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Location> rdf:type owl:Class ;
+                                                                                                 rdfs:comment "A class that has the information about the location of the buildings"@en .
+
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Mixed
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Mixed> rdf:type owl:Class ;
+                                                                                              rdfs:subClassOf <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Building> .
+
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Sanitary
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Sanitary> rdf:type owl:Class ;
+                                                                                                 rdfs:subClassOf <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Building> .
+
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Security
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Security> rdf:type owl:Class ;
+                                                                                                 rdfs:subClassOf <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Building> .
+
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Social
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Social> rdf:type owl:Class ;
+                                                                                               rdfs:subClassOf <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Building> .
+
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Sport
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Sport> rdf:type owl:Class ;
+                                                                                              rdfs:subClassOf <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Building> .
+
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Street
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Street> rdf:type owl:Class ;
+                                                                                               rdfs:subClassOf <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#District> .
+
+
+###  http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Warehouse
+<http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Warehouse> rdf:type owl:Class ;
+                                                                                                  rdfs:subClassOf <http://www.semanticweb.org/alumno/ontologies/2021/10/Group05_ontologyGroup05_ontology#Building> .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

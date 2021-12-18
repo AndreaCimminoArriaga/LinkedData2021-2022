@@ -1,0 +1,159 @@
+@prefix : <http://findmycontainer.es/lcc/ontology/Container#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://findmycontainer.es/lcc/ontology/Container#> .
+
+<http://findmycontainer.es/lcc/ontology/Container#> rdf:type owl:Ontology ;
+                                                     rdfs:comment "This is the container class" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://findmycontainer.es/lcc/ontology/Container#isIn
+:isIn rdf:type owl:ObjectProperty ;
+      rdfs:domain :Address ,
+                  :Container ;
+      rdfs:range :Address ,
+                 :District ;
+      rdfs:comment "Pr:Container-Pr:isIn-Pr:Adress or Pr:Adress-Pr:isIn-Wk:District" .
+
+
+###  http://www.opengis.net/ont/geosparql#hasGeometry
+<http://www.opengis.net/ont/geosparql#hasGeometry> rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain :Container ;
+                                                   rdfs:range <http://www.opengis.net/ont/sf#Point> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://findmycontainer.es/lcc/ontology/Container#hasFullAddress
+:hasFullAddress rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Address ;
+                rdfs:range xsd:string .
+
+
+###  http://findmycontainer.es/lcc/ontology/Container#hasIdentifier
+:hasIdentifier rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Container ;
+               rdfs:range xsd:string ;
+               rdfs:comment "Indicates the type of the container" .
+
+
+###  http://findmycontainer.es/lcc/ontology/Container#hasLot
+:hasLot rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Container ;
+        rdfs:range xsd:integer .
+
+
+###  http://findmycontainer.es/lcc/ontology/Container#hasName
+:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Address ,
+                     :District ;
+         rdfs:range xsd:string .
+
+
+###  http://findmycontainer.es/lcc/ontology/Container#hasNumber
+:hasNumber rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Address ;
+           rdfs:range xsd:integer ;
+           rdfs:comment "Number of the adress" .
+
+
+###  http://findmycontainer.es/lcc/ontology/Container#hasQuantity
+:hasQuantity rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Container ;
+             rdfs:range xsd:integer .
+
+
+###  http://findmycontainer.es/lcc/ontology/Container#modelDescription
+:modelDescription rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Container ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.opengis.net/ont/geosparql#asWKT
+<http://www.opengis.net/ont/geosparql#asWKT> rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain <http://www.opengis.net/ont/sf#Point> ;
+                                             rdfs:range xsd:string .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://www.opengis.net/ont/geosparql#asWKT> ;
+   owl:annotatedProperty rdfs:range ;
+   owl:annotatedTarget xsd:string ;
+   rdfs:comment "http://www.opengis.net/ont/geosparql#wktLiteral"
+ ] .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#lat
+<http://www.w3.org/2003/01/geo/wgs84_pos#lat> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain :Container ;
+                                              rdfs:range xsd:decimal .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#long
+<http://www.w3.org/2003/01/geo/wgs84_pos#long> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain :Container ;
+                                               rdfs:range xsd:decimal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://findmycontainer.es/lcc/ontology/Container#Address
+:Address rdf:type owl:Class ;
+         rdfs:comment "The adress of the container" .
+
+
+###  http://findmycontainer.es/lcc/ontology/Container#Clothes
+:Clothes rdf:type owl:Class ;
+         rdfs:subClassOf :Container .
+
+
+###  http://findmycontainer.es/lcc/ontology/Container#Container
+:Container rdf:type owl:Class ;
+           rdfs:comment "This is the container class" .
+
+
+###  http://findmycontainer.es/lcc/ontology/Container#District
+:District rdf:type owl:Class ;
+          rdfs:comment "The district of the container" .
+
+
+###  http://findmycontainer.es/lcc/ontology/Container#Glass
+:Glass rdf:type owl:Class ;
+       rdfs:subClassOf :Container .
+
+
+###  http://findmycontainer.es/lcc/ontology/Container#Organic
+:Organic rdf:type owl:Class ;
+         rdfs:subClassOf :Container .
+
+
+###  http://findmycontainer.es/lcc/ontology/Container#Packaging
+:Packaging rdf:type owl:Class ;
+           rdfs:subClassOf :Container .
+
+
+###  http://findmycontainer.es/lcc/ontology/Container#Paper-Cardboard
+:Paper-Cardboard rdf:type owl:Class ;
+                 rdfs:subClassOf :Container .
+
+
+###  http://findmycontainer.es/lcc/ontology/Container#Waste
+:Waste rdf:type owl:Class ;
+       rdfs:subClassOf :Container .
+
+
+###  http://www.opengis.net/ont/sf#Point
+<http://www.opengis.net/ont/sf#Point> rdf:type owl:Class ;
+                                      rdfs:comment "Geometry of the container on the map" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
