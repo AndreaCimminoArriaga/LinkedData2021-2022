@@ -1,4 +1,6 @@
-# FUNCIONAMIENTO DEL PROGRAMA APP.PY
+# FUNCIONAMIENTO DEL PROGRAMA NEW_APP.PY
+
+Para que el archivo funcione correctamente se debe importar el fichero statements.trigs a un repositorio en graphDB que se llame app.
 
 Una vez ejecutado el script de python, te saldrá un mensaje en el que te pregunta "What are you looking for?". A este mensaje se puede contestar con "pos" o con "street". Si contestas con "pos" entonces el sistema te pedirá que introduzcas una coordenadas, primero te pregunta por la longitud y después te preguntará por la latitud. A continuación, el sistema te preguntará si quieres introducir un radio, mediante la frase "Do you want a radius?". Se puede contestar con "Y" o "y" si quieres introducir un radio o con "N" o "n" si no deseas introducir un radio.
 
@@ -11,3 +13,5 @@ Si eliges contestar a la primera pregunta con "pos" y no quieres introducir un r
 Por el contrario, si eliges contestar "pos", pero le quieres introducir un radio, el sistema te devolverá todas aquellas estaciones que se encuentran dentro de el radio introducido partiendo de las coordenadas. Las estaciones estarán ordenadas, en este caso, por el número de bicis. Además, también te devuelve las direcciones de las distintas estaciones, junto con sus distancias a las coordenadas --> función findRadius.
 
 Por último, si eliges contestar a la primera pregunta con "street", el sistema te devolverá todas aquellas estaciones que se encuentran en la calle introducida, junto con la dirección exacta y el número de bicis de cada estación. Si la calle no existe o no contiene estaciones el sistema devolverá "The street is not valid" --> función findStreet.
+
+El resultado se imprime en un DataFrame de la librería Pandas, por lo que es necesario tener instalada dicha librería para que aplicación funcione, además de la librería de rdflib.

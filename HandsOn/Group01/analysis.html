@@ -36,23 +36,40 @@
     
     - Resource Naming Strategy
 
-    Dominio: <a href="http://app.group01.es"><http://app.group01.es</a>
-    Path: <a href="http://app.group01.es/ontology/bicimad"><http://app.group01.es/ontology/bicimad</a>
+    Para nuestra ontología hemos utilizado las siguientes URI's con sus prefijos:
 
-    - Structure of the Ontology
+    <a href="http://app.group01.es/ontology/bicimad#">bMad</a>
+    <a href="https://saref.etsi.org/saref4city/">saref4city</a>
+    <a href="http://www.opengis.net/ont/geosparql#">geosp</a>
+    <a href="http://www.w3.org/2003/01/geo/wgs84_pos#">geo</a>
 
-    Clases: Thing
-                Place
-                    Barrio, Dirección, Calle, Distrito
-                Estacion
+    Para nuestros datos hemos utilizado la siguiente URI con el prefijo vacío:
 
-    ObjectProperties: isIN; rango: Place; Dominio: Place, Estacion
+    <a href="http://app.group01.es/resource/bicimad#">http://app.group01.es/resource/bicimad#</a>
 
-    DataProperties: longuitud; rango: xsd:float; dominio: Estacion.
-                    latitud; rango: xsd:float; dominio: Estacion.
-                    identificador; rango: xsd:string; dominio: Estacion.
-                    nombre; rango: xsd:string; dominio: Place.
-                    numBicis; rango: xsd:int; dominio: Estacion.
+
+    Hemos usado las clases City, Neighbourhood y District de saref4City, que heredan de AdministrativeArea.
+    También hemos creado nuestra propia clase Street que, para que sea igual que las anteriores, hemos decidido que herede de AdministrativeArea.
+
+    Para las estaciones hemos creado la clase Station que hereda de Point, perteneciente a la ontología 
+    GeoSparql, debido a que Point tiene el data property geosp:asWKT que necesitamos usar para poder medir distancias
+    usando coordenadas.
+
+    Hemos usado los object property geosp:sfWithin y geosp:sfContains para relacionar las clases. De manera que, por ejemplo, Street está relacionado con Neighbourhood con geosp:sfWithin y Neighbourhood lo está con Street con geosp:sfContains.
+
+    Data properties de Station y su tipo:
+
+        bMad:id         bMad:str
+        bMad:numBikes   xsd:int
+        bMad:address    bMad:str
+        geo:lat         xsd:float
+        geo:long        xsd:float
+
+    Data properties de City, Street, Neighbourhood, District y su tipo:
+
+        rdfs:label      bMad:str
+
+    Hemos tenido que definir nuestro propio str por problemas con la aplicación, aunque no es recomendable.
 
     </body>
 </html>
