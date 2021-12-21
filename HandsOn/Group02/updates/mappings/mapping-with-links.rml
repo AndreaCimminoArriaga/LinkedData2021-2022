@@ -7,7 +7,7 @@
 @prefix rr: <http://www.w3.org/ns/r2rml#>.
 @prefix rml: <http://semweb.mmlab.be/ns/rml#>.
 @prefix ql: <http://semweb.mmlab.be/ns/ql#>.
-@base <http://example.com/ns#>.
+@base <http://www.consumo_madrid.com/ontology#>.
 
 <#TriplesMap1>
 	rml:logicalSource [ 
@@ -15,7 +15,7 @@
 		rml:referenceFormulation ql:CSV 
 	];
     	rr:subjectMap [
-			rr:template "http://www.consumo_madrid.com/ontology/Building/{ID}";
+			rr:template "http://www.consumo_madrid.com/resource/Building/{ID}";
 			rr:termType rr:IRI; 
 			rr:class our:Building
     ];
@@ -63,7 +63,7 @@
     rr:predicateObjectMap [ 
 		rr:predicateMap [ rr:constant our:isLocatedAt; rr:termType rr:IRI ]; 
 		rr:objectMap [ 
-			rr:template "http://www.consumo_madrid.com/ontology/Street/{VIA}"; 
+			rr:template "http://www.consumo_madrid.com/resource/Street/{VIA}"; 
 			rr:termType rr:IRI 
 			] 
 	];
@@ -122,7 +122,7 @@
 		rml:referenceFormulation ql:CSV 
 	];
     	rr:subjectMap [
-			rr:template "http://www.consumo_madrid.com/ontology/Energy_use/{ID}";
+			rr:template "http://www.consumo_madrid.com/resource/Energy_use/{ID}";
 			rr:termType rr:IRI; 
 			rr:class our:Energy_use
     ];
@@ -181,7 +181,7 @@
 		rml:referenceFormulation ql:CSV 
 	];
     	rr:subjectMap [
-			rr:template "http://www.consumo_madrid.com/ontology/District/{DISTRITO}";
+			rr:template "http://www.consumo_madrid.com/resource/District/{DISTRITO}";
 			rr:termType rr:IRI; 
 			rr:class our:District
     ];
@@ -209,7 +209,7 @@
 		rml:referenceFormulation ql:CSV 
 	];
     	rr:subjectMap [
-			rr:template "http://www.consumo_madrid.com/ontology/Neighborhood/{BARRIO}";
+			rr:template "http://www.consumo_madrid.com/resource/Neighborhood/{BARRIO}";
 			rr:termType rr:IRI; 
 			rr:class our:Neighborhood
     ];

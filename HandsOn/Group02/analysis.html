@@ -14,7 +14,7 @@
                 <li>Include last modification date</li>
                 <li>It may not be indicated, implied or suggested that the Madrid City Council participates, sponsors or supports the reuse that is carried out with the information.</li>
             </ul> 
-        <p>So we decided to choose a Copyleft License including all the previous mentioned bullet points.  </p> 
+        <p>So we decided to choose a Copyleft License including all the previous mentioned bullet points. By the very nature of the license, people that use our data must provide it's application as an open resource </p> 
         <p>In conlusion, the user of our dataset has the same liberties as we have when using the Madrid's City Hall dataset.  </p>    
         <h4>Resource naming strategy</h4>
         <ul>
@@ -23,6 +23,43 @@
             <li>Ensures that the paths for individuals of different classes are not the same </li>
             <li>Defines individual URIs independently of class URIs</li>
         </ul>
-
+        <p>We have used the following name strategies: </p>
+        <ul>
+            <li>For our ontology: http://www.consumo_madrid.com/ontology#</li>
+            <li>For our data: http://www.consumo_madrid.com/resource/</li>
+        </ul>
+        <p>We have defined four classes: </p>
+        <ul>
+            <li>A main class "Building", from which the other classes will inherit</li>
+            <li>"Neighborhood"</li>
+            <li>"District"</li>
+            <li>"Energy_use"</li>
+        </ul>
+        <p>The class "Building" has object properties such as  "hasEnergyUse", "isFromDistrict" and "isFromNeighborhood" which connects with the classes "Energy_use", "District", "Neighborhood" respectively and "isLocatedAt" which references to an rr:IRI</p>
+        <p>And data properties such as: </p>
+        <ul>
+            <li>"hasId":           xsd:int</li>
+            <li>"latitude":        xsd:float</li>
+            <li>"longitude":       xsd:float</li>
+            <li>"buildingName":    xsd:string</li>
+            <li>"hasNumber":       xsd:int</li>
+            <li>"hasPostalCode":   xsd:int</li>
+            <li>"buildingType":    xsd:string</li>
+        </ul>
+        <p>The class "Neighborhood" has the object property "sameAs" and the following data properties:</p>
+        <ul>
+            <li>"label":           xsd:string</li>
+        </ul>
+        <p>The class "District" follows the same structure as the class "Neighborhood":</p>
+        
+        <p>The class "Energy_use" has the following data properties:</p>
+        <ul>
+            <li>"Amount":           xsd:float</li>
+            <li>"energyType":       xsd:string</li>
+            <li>"energyClass":      xsd:string</li>
+            <li>"isFromYear":       xsd:int</li>
+            <li>"isFromMonth":      xsd:int</li>
+            <li>"hasMagnitude":     xsd:string</li>
+        </ul>
     </body>
 </html>

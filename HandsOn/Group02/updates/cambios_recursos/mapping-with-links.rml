@@ -7,7 +7,7 @@
 @prefix rr: <http://www.w3.org/ns/r2rml#>.
 @prefix rml: <http://semweb.mmlab.be/ns/rml#>.
 @prefix ql: <http://semweb.mmlab.be/ns/ql#>.
-@base <http://example.com/ns#>.
+@base <http://www.consumo_madrid.com/ontology#>.
 
 <#TriplesMap1>
 	rml:logicalSource [ 
@@ -15,7 +15,7 @@
 		rml:referenceFormulation ql:CSV 
 	];
     	rr:subjectMap [
-			rr:template "http://www.consumo_madrid.com/ontology/Building/{ID}";
+			rr:template "http://www.consumo_madrid.com/resource/Building/{ID}";
 			rr:termType rr:IRI; 
 			rr:class our:Building
     ];
@@ -43,7 +43,7 @@
             rr:datatype xsd:float
       		]
     ];
-
+	
     rr:predicateObjectMap [
     	rr:predicate our:buildingType;
     	rr:objectMap [
@@ -61,25 +61,9 @@
     ];
 
     rr:predicateObjectMap [ 
-		rr:predicateMap [ rr:constant our:isFromDistrict; rr:termType rr:IRI ]; 
-		rr:objectMap [ 
-			rr:template "http://www.consumo_madrid.com/ontology/District/{DISTRITO}"; 
-			rr:termType rr:IRI 
-			] 
-	];
-
-    rr:predicateObjectMap [ 
-		rr:predicateMap [ rr:constant our:isFromNeighborhood; rr:termType rr:IRI ]; 
-		rr:objectMap [ 
-			rr:template "http://www.consumo_madrid.com/ontology/Neighborhood/{BARRIO}"; 
-			rr:termType rr:IRI 
-			] 
-	];
-
-    rr:predicateObjectMap [ 
 		rr:predicateMap [ rr:constant our:isLocatedAt; rr:termType rr:IRI ]; 
 		rr:objectMap [ 
-			rr:template "http://www.consumo_madrid.com/ontology/Street/{VIA}"; 
+			rr:template "http://www.consumo_madrid.com/resource/Street/{VIA}"; 
 			rr:termType rr:IRI 
 			] 
 	];
@@ -109,6 +93,27 @@
             rr:parent "ID";
             ];
         ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate our:isFromDistrict;
+        rr:objectMap [
+        rr:parentTriplesMap <#TriplesMap3>;
+        rr:joinCondition [
+            rr:child "DISTRITO";
+            rr:parent "DISTRITO";
+            ];];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate our:isFromNeighborhood;
+        rr:objectMap [
+        rr:parentTriplesMap <#TriplesMap4>;
+        rr:joinCondition [
+            rr:child "BARRIO";
+            rr:parent "BARRIO";
+            ];
+        ];
     ].
 
 <#TriplesMap2>
@@ -117,7 +122,7 @@
 		rml:referenceFormulation ql:CSV 
 	];
     	rr:subjectMap [
-			rr:template "http://www.consumo_madrid.com/ontology/Energy_use/{ID}";
+			rr:template "http://www.consumo_madrid.com/resource/Energy_use/{ID}";
 			rr:termType rr:IRI; 
 			rr:class our:Energy_use
     ];
@@ -166,6 +171,60 @@
     	rr:predicate our:hasMagnitude;
     	rr:objectMap [
       		rml:reference "UNIDADES";
+            rr:datatype xsd:string
+      		]
+    ].
+
+<#TriplesMap3>
+	rml:logicalSource [ 
+    	rml:source "consumo_energia_edificios-with-links.csv" ;
+		rml:referenceFormulation ql:CSV 
+	];
+    	rr:subjectMap [
+			rr:template "http://www.consumo_madrid.com/resource/District/{DISTRITO}";
+			rr:termType rr:IRI; 
+			rr:class our:District
+    ];
+
+    rr:predicateObjectMap [ 
+            rr:predicateMap [ rr:constant owl:sameAs; rr:termType rr:IRI ]; 
+            rr:objectMap [ 
+                rr:template "http://dbpedia.org/resource/{URI_DISTRITO}";
+                rr:termType rr:IRI 
+                ] 
+        ];
+
+    
+    rr:predicateObjectMap [
+    	rr:predicate rdfs:label;
+    	rr:objectMap [
+      		rml:reference "DISTRITO";
+            rr:datatype xsd:string
+      		]
+    ].
+
+<#TriplesMap4>
+	rml:logicalSource [ 
+    	rml:source "consumo_energia_edificios-with-links.csv" ;
+		rml:referenceFormulation ql:CSV 
+	];
+    	rr:subjectMap [
+			rr:template "http://www.consumo_madrid.com/resource/Neighborhood/{BARRIO}";
+			rr:termType rr:IRI; 
+			rr:class our:Neighborhood
+    ];
+
+    rr:predicateObjectMap [ 
+            rr:predicateMap [ rr:constant owl:sameAs; rr:termType rr:IRI ]; 
+            rr:objectMap [ 
+                rr:template "http://dbpedia.org/resource/{URI_BARRIO}";
+                rr:termType rr:IRI ] 
+    ];
+    
+    rr:predicateObjectMap [
+    	rr:predicate rdfs:label;
+    	rr:objectMap [
+      		rml:reference "BARRIO";
             rr:datatype xsd:string
       		]
     ].
