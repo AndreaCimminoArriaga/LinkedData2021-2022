@@ -1,0 +1,40 @@
+CODIGO_CORTO,DIRECCION,NOM_TIPO,LABEL
+4,Plaza de Espana,UrbanTraffic,Plaza de Espana
+8,Entre C/ Alcala y C/ O’ Donell ,UrbanTraffic,Escuelas Aguirre
+11,Avda. Ramon y Cajal  esq. C/ Principe de Vergara,UrbanTraffic,Avenida Ramon y Cajal
+16,C/ Arturo Soria  esq. C/  Vizconde de los Asilos ,UrbanBackground,Arturo Soria
+17,C/. Juan Penalver,UrbanBackground,Villaverde Alto
+18,Calle Farolillo - C/Ervigio,UrbanBackground,Farolillo
+24,Casa de Campo  (Terminal del Teleferico),Suburban,Casa de Campo
+27,"C/. Jupiter, 21 (Barajas) ",UrbanBackground,Barajas
+35,Plaza del Carmen esq. Tres Cruces. ,UrbanBackground,Plaza del Carmen
+36,Avd. Moratalaz  esq. Camino de los Vinateros,UrbanTraffic,Moratalaz
+38,Avda. Pablo Iglesias esq. C/ Marques de Lema,UrbanTraffic,Cuatro Caminos
+39,Avd. Betanzos esq. C/  Monforte de Lemos ,UrbanTraffic,Barrio del Pilar
+40,C/ Arroyo del Olivar  esq. C/  Rio Grande. ,UrbanBackground,Vallecas
+47,C/ Juan de Mariana / Pza. Amanecer Mendez Alvaro,UrbanBackground,Mendez Alvaro
+48,C/ Jose Gutierrez Abascal,UrbanTraffic,Paseo de la Castellana
+49,Paseo Venezuela- Casa de Vacas,UrbanBackground,Retiro
+50,Plaza Castilla (Canal),UrbanTraffic,Plaza Castilla
+54,Avda La Gavia / Avda. Las Suertes,UrbanBackground,Ensanche de Vallecas
+55,C/ Riano (Barajas) ,UrbanBackground,Urbanizacion Embajada
+56, Pza. Eliptica - Avda. Oporto,UrbanTraffic,Plaza Eliptica
+57,C/ Princesa de Eboli esq C/ Maria Tudor,UrbanBackground,Sanchinarro
+58,Avda. La Guardia,Suburban,El Pardo
+59,Parque Juan Carlos I (frente oficinas mantenimiento),Suburban,Parque Juan Carlos I
+60,Plaza Tres Olivos ,UrbanBackground,Tres Olivos
+38,Avd. Pablo Iglesias esq. C/ Marques de Lema,Meteorological,Cuatro Caminos
+56,Pza. Eliptica - Avda. Oporto,Meteorological,Plaza Eliptica
+102,"C/ Fuente Carantona, 8",Meteorological,JMD Moratalaz
+103,"C/ Arroyo Bueno, 53",Meteorological,JMD Villaverde
+104,Embajadores,Meteorological,EDAR La China
+106,Autovia M-30 Km. 21.700,Meteorological,Centro Municipal de Acustica
+107,"Ctra. de Canillas, 2",Meteorological,JMD Hortaleza
+108,C.D.M. Penagrande,Meteorological,Penagrande
+109,"Plaza de Chamberi, 4",Meteorological,JMD Chamberi
+110,"C/ Mayor, 72",Meteorological,JMD Centro
+111,"C/ Principe de Vergara, 142",Meteorological,JMD Chamartin
+112,"Avda. Albufera, 42",Meteorological,JMD Vallecas 1
+113,"Avda. Albufera, 42",Meteorological,JMD Vallecas 2
+114,"Paseo de la Chopera, 10",Meteorological,Matadero 1
+115,"Paseo de la Chopera, 10",Meteorological,Matadero 2

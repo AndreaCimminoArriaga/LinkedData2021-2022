@@ -1,0 +1,40 @@
+CODIGO_CORTO,DIRECCION,NOM_TIPO,LABEL,URI-Wikidata
+4,Plaza de Espana,UrbanTraffic,plaza de España,https://www.wikidata.org/wiki/Q1326261
+8,Entre C/ Alcala y C/ O’ Donell ,UrbanTraffic,Escuelas Aguirre,https://www.wikidata.org/wiki/Q5397501
+11,Avda. Ramon y Cajal  esq. C/ Principe de Vergara,UrbanTraffic,"Avenida de Ramón y Cajal, Madrid",https://www.wikidata.org/wiki/Q30467128
+16,C/ Arturo Soria  esq. C/  Vizconde de los Asilos ,UrbanBackground,calle de Arturo Soria,https://www.wikidata.org/wiki/Q8255504
+17,C/. Juan Penalver,UrbanBackground,"Villaverde Alto, Casco Histórico de Villaverde",https://www.wikidata.org/wiki/Q390435
+18,Calle Farolillo - C/Ervigio,UrbanBackground,Farolillo,
+24,Casa de Campo  (Terminal del Teleferico),Suburban,Casa de Campo,https://www.wikidata.org/wiki/Q16302441
+27,"C/. Jupiter, 21 (Barajas) ",UrbanBackground,Barajas,https://www.wikidata.org/wiki/Q807230
+35,Plaza del Carmen esq. Tres Cruces. ,UrbanBackground,Plaza del Carmen,https://www.wikidata.org/wiki/Q6080406
+36,Avd. Moratalaz  esq. Camino de los Vinateros,UrbanTraffic,Moratalaz,https://www.wikidata.org/wiki/Q2076109
+38,Avda. Pablo Iglesias esq. C/ Marques de Lema,UrbanTraffic,Cuatro Caminos,https://www.wikidata.org/wiki/Q5824684
+39,Avd. Betanzos esq. C/  Monforte de Lemos ,UrbanTraffic,El Pilar,https://www.wikidata.org/wiki/Q3773964
+40,C/ Arroyo del Olivar  esq. C/  Rio Grande. ,UrbanBackground,Vallecas,https://www.wikidata.org/wiki/Q10296
+47,C/ Juan de Mariana / Pza. Amanecer Mendez Alvaro,UrbanBackground,Méndez Álvaro,https://www.wikidata.org/wiki/Q2479775
+48,C/ Jose Gutierrez Abascal,UrbanTraffic,Paseo de la Castellana,https://www.wikidata.org/wiki/Q1473674
+49,Paseo Venezuela- Casa de Vacas,UrbanBackground,Retiro,https://www.wikidata.org/wiki/Q2002296
+50,Plaza Castilla (Canal),UrbanTraffic,plaza de Castilla,https://www.wikidata.org/wiki/Q786291
+54,Avda La Gavia / Avda. Las Suertes,UrbanBackground,Ensanche de Vallecas,https://www.wikidata.org/wiki/Q3847485
+55,C/ Riano (Barajas) ,UrbanBackground,Urbanizacion Embajada,
+56, Pza. Eliptica - Avda. Oporto,UrbanTraffic,Plaza Elíptica,https://www.wikidata.org/wiki/Q16619985
+57,C/ Princesa de Eboli esq C/ Maria Tudor,UrbanBackground,Sanchinarro,https://www.wikidata.org/wiki/Q3076623
+58,Avda. La Guardia,Suburban,El Pardo,https://www.wikidata.org/wiki/Q3314337
+59,Parque Juan Carlos I (frente oficinas mantenimiento),Suburban,"Parque Juan Carlos I de Pinto, Madrid",https://www.wikidata.org/wiki/Q109187261
+60,Plaza Tres Olivos ,UrbanBackground,Tres Olivos,https://www.wikidata.org/wiki/Q608766
+38,Avd. Pablo Iglesias esq. C/ Marques de Lema,Meteorological,Cuatro Caminos,https://www.wikidata.org/wiki/Q5824684
+56,Pza. Eliptica - Avda. Oporto,Meteorological,Plaza Elíptica,https://www.wikidata.org/wiki/Q16619985
+102,"C/ Fuente Carantona, 8",Meteorological,JMD Moratalaz,https://www.wikidata.org/wiki/Q56191300
+103,"C/ Arroyo Bueno, 53",Meteorological,JMD Villaverde,https://www.wikidata.org/wiki/Q56190652
+104,Embajadores,Meteorological,EDAR La China,
+106,Autovia M-30 Km. 21.700,Meteorological,Centro Municipal de Acustica,
+107,"Ctra. de Canillas, 2",Meteorological,JMD Hortaleza,https://www.wikidata.org/wiki/Q56190091
+108,C.D.M. Penagrande,Meteorological,Peñagrande,https://www.wikidata.org/wiki/Q3319582
+109,"Plaza de Chamberi, 4",Meteorological,JMD Chamberi,
+110,"C/ Mayor, 72",Meteorological,JMD Centro,https://www.wikidata.org/wiki/Q56164302
+111,"C/ Principe de Vergara, 142",Meteorological,JMD Chamartín,https://www.wikidata.org/wiki/Q56192459
+112,"Avda. Albufera, 42",Meteorological,JMD Vallecas 1,
+113,"Avda. Albufera, 42",Meteorological,JMD Vallecas 2,
+114,"Paseo de la Chopera, 10",Meteorological,Matadero Madrid,https://www.wikidata.org/wiki/Q4043800
+115,"Paseo de la Chopera, 10",Meteorological,Matadero Madrid,https://www.wikidata.org/wiki/Q4043800

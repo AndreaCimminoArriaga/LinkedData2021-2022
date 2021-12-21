@@ -144,43 +144,41 @@ def get_color(target_day: str, station, g):
 def get_no2_pm10_o3(control_station, date, g):
     # Namespaces
     AQP_DATA = Namespace("http://www.airqualitypredictor.org/data/")
-    AQP_CLASSES = Namespace("http://www.airqualitypredictor.org/ontology/")
-    AQP_PROPERTIES = Namespace("http://www.airqualitypredictor.org/ontology#")
+    AQP = Namespace("http://www.airqualitypredictor.org/ontology#")
 
     query = f"""
             SELECT ?max_PM10 ?max_NO_2 ?max_O_3
             WHERE {"{"}
             {"{"}
                 {"{"}
-                    ?sub1 a aqp_classes:PM10 .
-                    ?sub1 aqp_properties:hasMaxValue ?max_PM10 .
-                    ?sub1 aqp_properties:isFrom aqp_data:{control_station} .
-                    ?sub1 aqp_properties:atDate ?date1 .
+                    ?sub1 a aqp:PM10 .
+                    ?sub1 aqp:hasMaxValue ?max_PM10 .
+                    ?sub1 aqp:isFrom aqp_data:{control_station} .
+                    ?sub1 aqp:atDate ?date1 .
                     FILTER (?date1 = "{date}"^^xsd:date) .
                 {"}"}
                 UNION
                 {"{"}
-                    ?sub2 a aqp_classes:NO2 .
-                    ?sub2 aqp_properties:hasMaxValue ?max_N0_2 .
-                    ?sub2 aqp_properties:isFrom aqp_data:{control_station} .
-                    ?sub2 aqp_properties:atDate ?date2 .
+                    ?sub2 a aqp:NO2 .
+                    ?sub2 aqp:hasMaxValue ?max_N0_2 .
+                    ?sub2 aqp:isFrom aqp_data:{control_station} .
+                    ?sub2 aqp:atDate ?date2 .
                     FILTER(?date2 = "{date}"^^xsd:date) .
                 {"}"}
             {"}"}
             UNION 
             {"{"}
-                ?sub3 a aqp_classes:O_3 .
-                ?sub3 aqp_properties:hasMaxValue ?max_O_3 .
-                ?sub3 aqp_properties:isFrom aqp_data:{control_station} .
-                ?sub3 aqp_properties:atDate ?date3 .
+                ?sub3 a aqp:O_3 .
+                ?sub3 aqp:hasMaxValue ?max_O_3 .
+                ?sub3 aqp:isFrom aqp_data:{control_station} .
+                ?sub3 aqp:atDate ?date3 .
                 FILTER(?date3 = "{date}"^^xsd:date) .
             {"}"}
         {"}"}
             """
 
     q = prepareQuery(query, initNs={"aqp_data": AQP_DATA,
-                                    "aqp_classes": AQP_CLASSES,
-                                    "aqp_properties": AQP_PROPERTIES,
+                                    "aqp": AQP,
                                     "xsd": XSD})
 
     for no2, pm10, o3 in g.query(q):
@@ -218,7 +216,7 @@ def main():
     run = True
     while run:
         # Initialize values
-        target_date = input('  [ ' +term.red + term.bold + 'INFO'+term.normal+ ' ]  Please, now select the day of december you want to now about> ')
+        target_day = input('  [ ' +term.red + term.bold + 'INFO'+term.normal+ ' ]  Please, now select the day of december you want to now about> ')
 
         print('  [ ' +term.red + term.bold + 'INFO'+term.normal+ ' ]  Generating image...')
         # PLOTTING SETTINGS
